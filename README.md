@@ -92,7 +92,7 @@ allowed_websites:
 disallowed_websites:
   - url: 'https://example3.com'
     accessibility_texts:
-      - "Custom text for example.com"
+      - "Custom text for example3.com"
   - url: 'https://example4.com'
   - url: 'https://example5.com'
 
