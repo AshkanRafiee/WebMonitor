@@ -117,15 +117,15 @@ class WebsiteMonitor:
         try:
             with open(self.config_file, 'r') as file:
                 config = yaml.safe_load(file)
-                allowed_websites = config.get('allowed_websites', [])
-                disallowed_websites = config.get('disallowed_websites', [])
+                do_not_monitor = config.get('do_not_monitor', [])
+                monitor = config.get('monitor', [])
 
                 websites = {}
 
-                for website in allowed_websites:
+                for website in do_not_monitor:
                     websites[website['url']] = {'allowed': True}
 
-                for website in disallowed_websites:
+                for website in monitor:
                     websites[website['url']] = {
                         'allowed': False,
                         'accessibility_texts': website.get('accessibility_texts', self.global_accessibility_texts)
@@ -172,11 +172,11 @@ class WebsiteMonitor:
                     website_data = self.websites[website]
                     texts_to_check = website_data.get('accessibility_texts', self.global_accessibility_texts)
                     if not any(text in response_text for text in texts_to_check):
-                        self.logger.warning(f'{website}: ALERT! Website accessible over the internet.')
+                        self.logger.warning(f'{website}: ALERT! Website is not accessible over the internet.')
                         self.logger.info(f'{website}: Server returned status code {response.status}.')
                         return True
                     else:
-                        self.logger.info(f'{website}: Not accessible over the internet.')
+                        self.logger.info(f'{website}: accessible over the internet.')
                         self.logger.info(f'{website}: Server returned status code {response.status}.')
                         return False
             except asyncio.TimeoutError:
