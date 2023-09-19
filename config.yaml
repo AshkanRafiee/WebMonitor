@@ -24,12 +24,12 @@ global_accessibility_texts:
   - "some text 1"
   - "some text 2"
 
-# List of allowed websites to monitor
+# List of allowed websites to avoid monitoring
 allowed_websites:
   - url: 'https://example.com'
   - url: 'https://example2.com'
 
-# List of disallowed websites to monitor
+# List of websites to monitor if they are available over the internet (and it's not allowed to be available over the internet)
 disallowed_websites:
   - url: 'https://example3.com'
     accessibility_texts:
