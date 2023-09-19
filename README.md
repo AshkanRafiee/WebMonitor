@@ -83,13 +83,13 @@ global_accessibility_texts:
   - "some text 1"
   - "some text 2"
 
-# List of allowed websites to monitor
-allowed_websites:
+# List of websites to avoid monitoring
+do_not_monitor:
   - url: 'https://example.com'
   - url: 'https://example2.com'
 
-# List of disallowed websites to monitor
-disallowed_websites:
+# List of websites to monitor if they are available over the internet
+monitor:
   - url: 'https://example3.com'
     accessibility_texts:
       - "Custom text for example3.com"
