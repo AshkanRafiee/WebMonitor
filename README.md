@@ -100,7 +100,7 @@ disallowed_websites:
 num_runs: 2
 
 # Delay in seconds between monitoring iterations (use 0 for immediate rerun)
-iteration_delay: 5  # 2 minutes
+iteration_delay: 60  # 1 minute
 ```
 
 Replace `'https://rocketchat-webhook-url'` with your Rocket.Chat webhook URL and customize the other configuration settings as needed.
