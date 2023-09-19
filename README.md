@@ -110,7 +110,7 @@ Replace `'https://rocketchat-webhook-url'` with your Rocket.Chat webhook URL and
 To run the WebMonitor, execute the following command in your terminal:
 
 ```bash
-python website_monitor.py
+python webmonitor.py
 ```
 
 The script will start monitoring the specified websites based on your configuration. It will run for the specified number of iterations with a delay between iterations or continue running indefinitely if configured as such.
