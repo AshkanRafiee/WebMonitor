@@ -24,7 +24,7 @@ global_accessibility_texts:
   - "some text 1"
   - "some text 2"
 
-# List of websites to avoid monitoring
+# List of websites to avoid monitoring (just for listing your websites)
 do_not_monitor:
   - url: 'https://example.com'
   - url: 'https://example2.com'
