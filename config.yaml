@@ -1,0 +1,44 @@
+# Rocket.Chat webhook URL for sending alerts
+webhook_url: 'https://rocketchat-webhook-url'
+
+# Flag to control sending of alerts
+send_alerts: false
+
+# Flag to retain logs or overwrite them for each run
+retain_logs: true
+
+# Flag to check and manage the size of the log file
+check_file_size: true
+
+# Maximum file size in megabytes (MB) before log file is cleared (Default: 2GB)
+max_file_size_mb: 2048
+
+# Number of concurrent requests to make for WebMonitoring
+concurrent_requests: 10
+
+# Timeout value in seconds for each HTTP request
+timeout: 10
+
+# Global accessibility_texts to be used by default
+global_accessibility_texts:
+  - "some text 1"
+  - "some text 2"
+
+# List of allowed websites to monitor
+allowed_websites:
+  - url: 'https://example.com'
+  - url: 'https://example2.com'
+
+# List of disallowed websites to monitor
+disallowed_websites:
+  - url: 'https://example3.com'
+    accessibility_texts:
+      - "Custom text for example.com"
+  - url: 'https://example4.com'
+  - url: 'https://example5.com'
+
+# Number of times to run the monitoring (use -1 for continuous monitoring)
+num_runs: 2
+
+# Delay in seconds between monitoring iterations (use 0 for immediate rerun)
+iteration_delay: 5  # 2 minutes
