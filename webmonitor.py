@@ -92,6 +92,7 @@ class WebsiteMonitor:
         if not self.send_alerts:
             return
 
+        print(f'Sending alert for {website}')
         message = f'The website {website} is accessible over the internet.'
         payload = {'text': message}
 
