@@ -174,6 +174,7 @@ class WebsiteMonitor:
                     if not any(text in response_text for text in texts_to_check):
                         self.logger.warning(f'{website}: ALERT! Website is not accessible over the internet.')
                         self.logger.info(f'{website}: Server returned status code {response.status}.')
+                        await self.send_alert_to_rocketchat(website)
                         return True
                     else:
                         self.logger.info(f'{website}: accessible over the internet.')
